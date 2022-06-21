@@ -1,0 +1,11 @@
+{
+    "data": {
+       "browser_config": {
+          "site": "https://www.decolar.com/shop/flights/results/roundtrip/FOR/BEL/{}/{}/1/0/0/NA/NA/NA/NA/NA",
+          "script_waiting_page": "return document.getElementsByClassName('{}')[0].textContent;",
+          "script_lenth_cards": "return document.getElementsByClassName('{}').length",
+          "script_take_value_card": "return document.getElementsByClassName('{}')[{}].textContent;",
+          "class_name": "cluster-pricebox-container CLUSTER"
+      }        
+   }
+}
