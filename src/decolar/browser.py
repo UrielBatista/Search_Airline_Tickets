@@ -1,10 +1,13 @@
 from selenium import webdriver
 from src.Utils.Methods import Methods
+from selenium.webdriver.chrome.options import Options
 
 class Browser:
     def __init__(self, dt_start, dt_end):
         print('...Initialize ServerData...')
-        self.driver = webdriver.Chrome(executable_path=r'driver_web_tools\chromedriver.exe')
+        self.options = Options()
+        self.options.headless = True
+        self.driver = webdriver.Chrome(executable_path=r'driver_web_tools\chromedriver.exe', options=self.options)
         self.dt_start = dt_start
         self.dt_end = dt_end
         self.method = Methods()
@@ -20,11 +23,15 @@ class Browser:
             value_card = self.executor_script_in_decolar_value('value_card', i, load['script_take_value_card'], load['class_name'])
             value_final = self.method.module_data_regex(value_card)
             
-            if int(value_final) <= 400:
+            if int(value_final) <= 600:
                 print('Valor desejado encontrado: {}'.format(value_final))
+                self.method.Sending(self.dt_start, self.dt_end, value_final)
                 break
 
             print("Valores das passagens: R${}".format(value_final))
+        
+        self.driver.quit()
+        # self.driver.close()
 
     def waiting_element_screen(self, script_waiting_page: str, class_name: str):
         flag = True

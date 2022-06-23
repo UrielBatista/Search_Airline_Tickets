@@ -1,5 +1,8 @@
 import re
 import json
+import sys
+import email
+import smtplib
 
 class Methods:
 
@@ -38,3 +41,18 @@ class Methods:
         data_load["class_name"] = data['data']['browser_config']['class_name']
 
         return data_load
+
+    def Sending(self, dt_start, dt_end, value_final):
+        recipients = ["ur.sabatista@gmail.com", "tassiasilvatavares@gmail.com"]
+        msg = email.message_from_string("Passagem de R${} de acordo com as datas {} - {}".format(value_final, dt_start, dt_end))
+        msg['From'] = "uri_airline_tickets@outlook.com"
+        msg['To'] = ', '.join(recipients)
+        msg['Subject'] = "PASSAGEM ENCONTRADA!!"
+
+        s = smtplib.SMTP("smtp.office365.com",587)
+        s.ehlo()
+        s.starttls() 
+        s.ehlo()
+        s.login("uri_airline_tickets@outlook.com", 'airlines@2022')
+        s.sendmail("uri_airline_tickets@outlook.com", recipients, msg.as_string())
+        print("...Email Sender...")

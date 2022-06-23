@@ -1,11 +1,14 @@
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 from src.decolar.browser import Browser
+import sys
 
-dt_start = '04/07/2022'
-dt_end = '08/07/2022'
+
 
 if __name__ == '__main__':
+    dt_start = sys.argv[1]
+    dt_end = sys.argv[2]
+
     try:
         browser = Browser(dt_start, dt_end)
         browser.getting_value_data()
