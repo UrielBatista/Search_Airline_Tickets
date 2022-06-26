@@ -6,6 +6,18 @@
           "script_lenth_cards": "return document.getElementsByClassName('{}').length",
           "script_take_value_card": "return document.getElementsByClassName('{}')[{}].textContent;",
           "class_name": "cluster-pricebox-container CLUSTER"
-      }        
+      },
+      "browser_google": {
+         "site": "https://www.google.com/flights",
+         "origin_to_flight": "//input[@class='II2One j0Ppje zmMKJ LbIaRd']",
+         "origin_dest_flight": "//div[@class='rIZzse']/div/div[4]/div/div/div/div/div/input",
+         "input_text_dest_to_flight": "//div[@class='A8nfpe yRXJAe P0ukfb a4gL0d TFC9me PRvvEd WKeVIb Otspu iWO5td BDJ8fb']/div[2]/div[2]/div/div/input",
+         "click_date_start": "//div[@class='bgJkKe K0Tsu']/div/div/div/div/div/div/div/div/div/input",
+         "load_all_data_page": "document.getElementsByClassName('v3ydJd QB2Jof')[0].click()",
+         "return_number_of_tickets_airline": "return document.getElementsByClassName('YMlIz FpEdX').length",
+         "return_interprise_of_flight": "return document.getElementsByClassName('TQqf0e sSHqwe tPgKwe ogfYpf')[{}].textContent",
+         "return_quantity_stoped_of_flight": "return document.getElementsByClassName('EfT7Ae AdWm1c tPgKwe')[{}].textContent",
+         "return_price_of_ticket_airline": "return document.getElementsByClassName('YMlIz FpEdX')[{}].textContent"
+      }
    }
 }

@@ -2,7 +2,7 @@ from selenium import webdriver
 from src.Utils.Methods import Methods
 from selenium.webdriver.chrome.options import Options
 
-class Browser:
+class BrowserDecolar:
     def __init__(self, dt_start, dt_end):
         print('...Initialize ServerData...')
         self.options = Options()
